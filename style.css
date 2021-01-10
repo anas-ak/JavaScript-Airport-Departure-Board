@@ -1,0 +1,91 @@
+        
+        body { background-color: #000; }
+
+        .departure-board {
+            padding: 1em;
+            margin-left: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            line-height: 1.3em;
+            background: rgb(30, 30, 30);
+            border-radius: 0.21em;
+            color: #eee;
+            font-family: Lato;
+            font-size: 15px;    /* Change This To Resize The Board */
+        }
+
+        .departure-board span.letter {
+            display: inline-block;
+            width: 1em;
+            margin: 0 .1em;
+            height: 1.3em;
+            text-align: center;
+            position: relative;
+        }
+
+        .departure-board span.letter {
+            box-shadow: 
+                inset 0 -0.07em 0 rgba(50, 50, 50, 0.7),
+                inset 0 -0.14em 0 rgba(0, 0, 0, 0.7),
+                inset 0.14em 0 0.28em rgba(0, 0, 0, 0.9),
+                inset -0.14em 0 0.28em rgba(0, 0, 0, 0.9),
+                0 0.07em 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .departure-board span.letter:before {
+            border-top: 0.07em solid rgba(0, 0, 0, 0.4);
+            border-bottom: 0.07em solid rgba(255, 255, 255, 0.08);
+            height: 0;
+            position: relative;
+            width: 100%;
+            left: 0;
+            top: 0.62em;
+            content: ' ';
+            display: block;
+            z-index: 2;
+            -moz-transform: translate(0, -0.05em);
+            -o-transform: translate(0, -0.1em);
+            transform: translate(0, -0.05em);      /*  Not sure */
+        }
+
+        .departure-board span.fold {
+            display: block;
+            position: absolute;
+            height: 0;
+            top: 0.65em;
+        }
+
+        .departure-board span.flap {
+            display: block;
+            position: absolute;
+            top: 0.0em;
+            width: 1em;
+            height: 0.65em;
+            margin: 0.0em;
+            overflow: hidden;
+        }
+
+        .departure-board span.text { width: 100%; }
+
+        .departure-board span.bottom { top: 0.65em; }
+
+        .departure-board span.bottom span.text {
+            position: relative;
+            top: -0.65em;
+        }
+
+        .departure-board span.flap.falling {
+            display: none;
+            bottom: 0;
+            top: auto;
+        }
+
+        .departure-board span.flap.falling span.text {
+            border-top: 0.03em solid #444;
+            border-bottom: 0.03em solid #444;
+            background: #333;
+            display: block;
+            position: relative;
+            transform: scaleY(1);
+            transition: transform linear;
+        }
